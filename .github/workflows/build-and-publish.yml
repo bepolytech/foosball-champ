@@ -1,0 +1,24 @@
+# Build elo ranking page and publish it to Github Pages
+
+# TODO: everything
+
+name: "Build and Publish Elo Ranking Page"
+
+on:
+#  schedule:
+#    - cron: */5 * * * * # a toute les minutes 5
+  workflow_dispatch:
+
+jobs:
+  build: # build page
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+  
+  publish: # publish on Github Pages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v1
+    
